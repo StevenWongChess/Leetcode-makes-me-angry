@@ -18,3 +18,23 @@ public:
         }
     }
 };
+
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int n = nums.size();
+        int l = 0;
+        int r = n - 1;
+        for(int i = 0; i <= r; i++){
+            while(r >= i && nums[i] == 2){
+                swap(nums[i], nums[r]);
+                r--;
+            }
+            if(nums[i] == 0){
+                swap(nums[i], nums[l]);
+                l++;
+            }
+        }
+    }
+};

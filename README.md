@@ -14,7 +14,7 @@
 
 69 => binary search trick
 
-31, 73, 89 => trick
+31, 73, 75, 89, 110 => trick
 
 78, 79 => two solutions
 
@@ -23,3 +23,5 @@
 98 => stack also works
 
 Tree => recursion, iterative
+
+136 => bit

@@ -11,13 +11,17 @@
  */
 class Solution {
 public:
-    TreeNode* assign(vector<int>& nums, int l, int r){
+    TreeNode* dfs(vector<int>& nums, int l, int r){
         if(l > r)
             return nullptr;
         int mid = (l + r) / 2;
-        return new TreeNode(nums[mid], assign(nums, l, mid - 1), assign(nums, mid + 1, r));
+        auto left = dfs(nums, l, mid - 1);
+        auto right = dfs(nums, mid + 1, r);
+        TreeNode* root = new TreeNode(nums[mid], left, right);
+        return root;
     }
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        return assign(nums, 0, nums.size() - 1);
+        int n = nums.size();
+        return dfs(nums, 0, n - 1);
     }
 };

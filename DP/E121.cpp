@@ -4,9 +4,8 @@ public:
         int yes = INT_MIN;
         int no = 0;
         for(auto i: prices){
-            
+            yes = max(yes, -i);
             no = max(no, yes + i);
-            yes = max(no - i, yes);
         }
         return no;
     }
