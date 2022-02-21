@@ -25,16 +25,16 @@ public:
         if(n < 1)
             return nullptr;
         TreeNode* root = new TreeNode;
-        root->left = dfs(head, n - 1 - (n - 1) / 2);
+        root->left = dfs(head, (n - 1) - (n - 1) / 2);
         root->val = head->val;
         head = head->next;
         root->right = dfs(head, (n - 1) / 2);
         return root;
     }
     TreeNode* sortedListToBST(ListNode* head) {
-        int n = 0;
         ListNode* it = head;
-        while(it != nullptr){
+        int n = 0;
+        while(it){
             n++; it = it->next;
         }
         return dfs(head, n);

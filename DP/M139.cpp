@@ -11,8 +11,7 @@ public:
         for(int i = 1; i <= n; i++){
             for(int j = 0; j < i; j++){
                 if(dp[j] && dict.find(s.substr(j, i - j)) != dict.end()){
-                    dp[i] = true;
-                    break;
+                    dp[i] = true; break;
                 }
             }
         }

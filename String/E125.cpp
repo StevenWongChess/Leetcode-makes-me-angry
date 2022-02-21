@@ -4,21 +4,21 @@ public:
     //     return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
     // }
     bool isPalindrome(string s) {
-        int left = 0;
-        int right = s.size() - 1;
-        while(left < right){
-            if(!isalnum(s[left])){
-                left++;
+        int n = s.length();
+        int l = 0;
+        int r = n - 1;
+        while(l < r){
+            if(!isalnum(s[l])){
+                l++;
                 continue;
             }
-            if(!isalnum(s[right])){
-                right--;
+            if(!isalnum(s[r])){
+                r--;
                 continue;
             }
-            if(tolower(s[left]) != tolower(s[right]))
+            if(tolower(s[l]) != tolower(s[r]))
                 return false;
-            right--;
-            left++;
+            l++; r--;
         }
         return true;
     }

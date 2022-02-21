@@ -11,20 +11,16 @@
  */
 class Solution {
 public:
-    int sum = 0;
-    int tmp = 0;
+    vector<int> ans;
     void dfs(TreeNode* root){
         if(!root)
             return;
-        tmp = 10 * tmp + root->val;
-        if(!root->left && !root->right)
-            sum += tmp;
+        ans.push_back(root->val);
         dfs(root->left);
         dfs(root->right);
-        tmp /= 10;
     }
-    int sumNumbers(TreeNode* root) {
+    vector<int> preorderTraversal(TreeNode* root) {
         dfs(root);
-        return sum;
+        return ans;
     }
 };

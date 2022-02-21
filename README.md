@@ -6,7 +6,7 @@
 
 15 => trapped by dict
 
-47 => hard!!!
+33, 47, 109 => hard!!!
 
 49 => sorting or hash
 
@@ -14,14 +14,18 @@
 
 69 => binary search trick
 
-31, 73, 75, 89, 110 => trick
+31, 73, 75, 89, 92, 110, 128, 130, 139 => trick
 
-78, 79 => two solutions
+78, 79, 137 => two solutions
 
-94 => recursion, iterative, Morris
+94, 144, 145 => recursion, iterative, Morris
 
 98 => stack also works
 
 Tree => recursion, iterative
 
+125 => `isalnum` `tolower`
+
 136 => bit
+
+109 => tree + divide and conquer

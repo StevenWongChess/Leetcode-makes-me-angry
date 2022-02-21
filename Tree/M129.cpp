@@ -11,16 +11,22 @@
  */
 class Solution {
 public:
-    void dfs(TreeNode* root, vector<int>& ans){
-        if(!root)
+    int ans = 0;
+    void dfs(TreeNode* root, int sum){
+        sum *= 10;
+        sum += root->val;
+        if(!root->left && !root->right){
+            ans += sum;
             return;
-        ans.push_back(root->val);
-        dfs(root->left, ans);
-        dfs(root->right, ans);
+        }
+        if(root->left)
+            dfs(root->left, sum);
+        if(root->right)
+            dfs(root->right, sum);
     }
-    vector<int> preorderTraversal(TreeNode* root) {
-        vector<int> ans;
-        dfs(root, ans);
+
+    int sumNumbers(TreeNode* root) {
+        dfs(root, 0);
         return ans;
     }
 };

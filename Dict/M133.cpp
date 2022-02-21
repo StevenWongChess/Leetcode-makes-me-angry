@@ -35,3 +35,25 @@ public:
         return p;
     }
 };
+
+
+
+class Solution {
+public:
+    unordered_map<Node*, Node*> visited;
+    Node* dfs(Node* node){
+        if(!node)
+            return nullptr;
+        if(visited.find(node) != visited.end())
+            return visited[node];
+        Node* root = new Node(node->val);
+        visited[node] = root;
+        for(auto i: node->neighbors){
+            root->neighbors.push_back(dfs(i));
+        }
+        return root;
+    }
+    Node* cloneGraph(Node* node) {
+        return dfs(node);
+    }
+};

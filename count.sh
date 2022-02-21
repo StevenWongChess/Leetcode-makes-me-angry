@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 clear
-Array=("Stack" "Sorting" "BackTrack" "Greedy" "Binary-Search" "Bit" "Dict" "DP" "Linked-List" "Maths" "Slide-Window" "String" "Tree" "Two-Pointer")
+Array=("Stack-Queue" "Sorting" "BackTrack" "Greedy" "Binary-Search" "Bit" "Dict" "DP" "Linked-List" "Maths" "Slide-Window" "String" "Tree" "Two-Pointer")
 ans=0
 easy=0
 medium=0
