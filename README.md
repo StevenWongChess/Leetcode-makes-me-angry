@@ -12,7 +12,7 @@
 
 53 => Follow-up => divide and conquer
 
-69 => binary search trick
+69, 153 => binary search trick
 
 31, 73, 75, 89, 92, 110, 128, 130, 139 => trick
 
@@ -26,6 +26,9 @@ Tree => recursion, iterative
 
 125 => `isalnum` `tolower`
 
-136 => bit
+136, 190(hard => O(1)), 191 => bit
 
 109 => tree + divide and conquer
+
+169 => random OR Boyer-Moore Voting
+

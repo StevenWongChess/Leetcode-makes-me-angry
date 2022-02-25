@@ -8,5 +8,15 @@ public:
             n >>= 1;
         }
         return count;
+
+        // int ret = 0;
+        // while (n) {
+        //     n &= n - 1;
+        //     ret++;
+        // }
+        // return ret;
     }
 };
+
+        
+

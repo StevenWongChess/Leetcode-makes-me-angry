@@ -22,7 +22,6 @@ public:
     bool isValidBST(TreeNode* root) {
         return dfs(root, LONG_MIN, LONG_MAX);
     }
-};
     // vector<int> v;
     // bool isValidBST(TreeNode* root) {
     //     dfs(root);

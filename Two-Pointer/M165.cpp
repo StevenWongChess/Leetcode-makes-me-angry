@@ -6,23 +6,23 @@ public:
         int i = 0;
         int j = 0;
         while(i < m || j < n){
-            int first = 0; 
-            int second = 0;
+            int l = 0;
+            int r = 0;
             while(i < m && version1[i] != '.'){
-                first *= 10;
-                first += version1[i] - '0';
+                l *= 10;
+                l += (version1[i] - '0');
                 i++;
             }
-            i++;
             while(j < n && version2[j] != '.'){
-                second *= 10;
-                second += version2[j] - '0';
+                r *= 10;
+                r += (version2[j] - '0');
                 j++;
             }
+            i++;
             j++;
-            if(first > second)
+            if(l > r)
                 return 1;
-            else if(first < second)
+            if(l < r)
                 return -1;
         }
         return 0;
