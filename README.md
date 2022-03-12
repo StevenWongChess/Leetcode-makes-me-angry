@@ -1,6 +1,12 @@
 # Leetcode 101
 
-To count how many problems you have solved by difficulty level and category: `Usage: ./count.sh` 
+I've written a `Bash Script` to count how many problems you have solved by difficulty level and category, usage: type the command in Linux / Mac
+
+```bash
+./count.sh
+```
+
+
 
 I would like to sort problems into categories.
 
