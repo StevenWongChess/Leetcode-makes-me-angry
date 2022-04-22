@@ -10,65 +10,37 @@ I've written a `Bash Script` to count how many problems you have solved by diffi
 
 I would like to sort problems into categories.
 
-1. BackTrack
-2. Binary-Search
-3. Bit
-4. Dict (Hash map)
-5. DP (Dynamic Programming)
-6. Graph
-7. Greedy
-8. Linked-List
-9. Priority-Queue
-10. Slide-Window
-11. Sorting
-12. Stack-Queue
-13. String
-14. Tree
-15. Two-Pointer
+###### 15 String
 
+Manacher algorithm: 5, 647
 
+KMP: 14 (or library)
 
-5, 647 => Manacher algorithm
+###### 16 Tree
 
-14 => library OR KMP => extremely hard!
+###### 17 Two-Pointer
 
-15 => trapped by dict
+Sorting: 15
 
-23 => priority queue OR divide and conquer
+###### 
 
-49 => sorting or hash
+8, 31, 47, 75, 89, 92, 109, 110, 130, 139, 238, 240, 287, 1041 => HARD!!!
 
-53 => Follow-up => divide and conquer
-
-109 => tree + divide and conquer
-
-69, 153 => binary search trick
-
-8, 31, 33, 47, 73, 75, 89, 92, 109, 110, 128, 130, 139, 238, 240, 287, 1041 => HARD!!!
-
-78, 79, 137 => two solutions
+137 => two solutions
 
 94, 144, 145 => recursion, iterative, Morris
 
 98 => stack also works
 
-Tree => recursion, iterative
-
 125 => `isalnum` `tolower`
-
-136, 190(hard => O(1)), 191, 231, 342, 389 => bit
 
 169 => random OR Boyer-Moore Voting
 
 209 => unordered_set
 
-461 => Brian Kernighan => built-in function for bit!
-
 454 => Meet in the middle attack lol
 
 235, 337, 367, 494, 572 => trick
-
-560 prefix
 
 
 

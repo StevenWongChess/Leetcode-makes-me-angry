@@ -19,23 +19,28 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    TreeNode* dfs(ListNode*& head, int n){
-        if(n < 1)
+    TreeNode *dfs(ListNode *&head, int n)
+    {
+        if (n < 1)
             return nullptr;
-        TreeNode* root = new TreeNode;
+        TreeNode *root = new TreeNode;
         root->left = dfs(head, (n - 1) - (n - 1) / 2);
         root->val = head->val;
         head = head->next;
         root->right = dfs(head, (n - 1) / 2);
         return root;
     }
-    TreeNode* sortedListToBST(ListNode* head) {
-        ListNode* it = head;
+    TreeNode *sortedListToBST(ListNode *head)
+    {
+        ListNode *it = head;
         int n = 0;
-        while(it){
-            n++; it = it->next;
+        while (it)
+        {
+            n++;
+            it = it->next;
         }
         return dfs(head, n);
     }
