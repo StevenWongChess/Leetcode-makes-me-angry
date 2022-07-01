@@ -8,14 +8,7 @@ public:
 
         while (n > 1)
         {
-            if (to_right)
-            {
-                ans += step;
-            }
-            else
-            {
-                ans += (n % 2 == 0) ? 0 : step;
-            }
+            ans += (to_right || (n & 1)) ? step : 0;
 
             step <<= 1;
             n >>= 1;

@@ -3,31 +3,37 @@ class Solution
 public:
     int select(vector<int> &nums, int l, int r, int k)
     {
-        int random_num = rand() % (r - l + 1) + l;
-        swap(nums[random_num], nums[r]);
-        int pivot = l;
-        for (int i = l; i < r; i++)
+        int index = rand() % (r - l + 1) + l, it = l;
+        swap(nums[index], nums[r]);
+        for (int i = l; i < r; ++i)
         {
             if (nums[i] <= nums[r])
             {
-                swap(nums[i], nums[pivot]);
-                pivot++;
+                swap(nums[it], nums[i]);
+                ++it;
             }
         }
-        swap(nums[pivot], nums[r]);
-        if (pivot == k)
-            return nums[pivot];
-        else if (pivot > k)
-            return select(nums, l, pivot - 1, k);
+        swap(nums[r], nums[it]);
+        if (it == k)
+        {
+            return nums[k];
+        }
+        else if (it > k)
+        {
+            return select(nums, l, it - 1, k);
+        }
         else
-            return select(nums, pivot + 1, r, k);
+        {
+            return select(nums, it + 1, r, k);
+        }
     }
+
     int findKthLargest(vector<int> &nums, int k)
     {
-        // srand(0);
+        // nth_element(nums.begin(), nums.begin() + k - 1, nums.end(), greater{});
+        // return nums[k - 1];
+        srand(0);
         int n = nums.size();
-        // return select(nums, 0, n - 1, n - k);
-        nth_element(nums.begin(), nums.begin() + n - k, nums.end());
-        return nums[n - k];
+        return select(nums, 0, n - 1, n - k);
     }
 };
