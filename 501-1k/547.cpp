@@ -27,28 +27,26 @@ public:
 
 class Solution {
 public:
-    void dfs(int i, vector<vector<int>>& isConnected, vector<bool>& visited){
+    void dfs(vector<vector<int>>& isConnected, vector<bool>& visited, int i){
         int n = isConnected.size();
-        if(visited[i])
-            return;
         visited[i] = true;
-        for(int j = 0; j < n; j++){
+        for(int j = 0; j < n; ++j){
             if(i == j)
                 continue;
-            if(isConnected[i][j] == 1)
-                dfs(j, isConnected, visited);
-        }
+            if(isConnected[i][j] == 1 && !visited[j])
+                dfs(isConnected, visited, j);
+        }   
     }
+
     int findCircleNum(vector<vector<int>>& isConnected) {
-        int n = isConnected.size();
+        int n = isConnected.size(), ans = 0;
         vector<bool> visited(n, false);
-        int count = 0;
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i < n; ++i){
             if(!visited[i]){
-                count++;
-                dfs(i, isConnected, visited);
+                ++ans;
+                dfs(isConnected, visited, i);
             }
         }
-        return count;
+        return ans;
     }
 };
