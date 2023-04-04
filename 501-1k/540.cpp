@@ -1,6 +1,24 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
+        int n = nums.size(), l = 0, r = n - 1;
+        while(l < r){
+            int mid = (l + r) / 2;
+            bool flag = (mid % 2 == 0) ? (nums[mid] == nums[mid + 1]) : (nums[mid] == nums[mid - 1]);
+            if(flag)
+                l = mid + 1;
+            else
+                r = mid;
+        }
+        return nums[l];
+    }
+};
+
+
+
+class Solution {
+public:
+    int singleNonDuplicate(vector<int>& nums) {
         int n = nums.size();
         int l = 0; int r = n - 1;
         while(l < r){

@@ -1,6 +1,40 @@
 class Solution {
 public:
     int maximumGap(vector<int>& nums) {
+        int l = *min_element(nums.begin(), nums.end()), 
+        r = *max_element(nums.begin(), nums.end()), 
+        n = nums.size();
+        if(n < 2)
+            return 0;
+        int size = max(1, (r - l) / (n - 1)),
+        m = (r - l) / size + 1;
+        
+        vector<int> vmax(m, -1), vmin(m, INT_MAX);
+
+        for(auto i: nums){
+            int idx = (i - l) / size;
+            vmax[idx] = max(vmax[idx], i);
+            vmin[idx] = min(vmin[idx], i);
+        }
+
+        int ans = 0;
+        int a = vmax[0];
+        for(int i = 1; i < m; ++i){
+            if(vmin[i] != INT_MAX){
+                ans = max(ans, vmin[i] - a);
+                a = vmax[i];
+            }
+        }
+        return ans;
+    }
+};
+
+
+
+
+class Solution {
+public:
+    int maximumGap(vector<int>& nums) {
         int n = nums.size();
         if(n < 2)
             return 0;
